@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+$osw: 'Oswald',
+sans-serif;
+$ro: 'Roboto',
+sans-serif;
+body {
+    // background: slateblue;
+}
+
+.title {
+    color: coral;
+    font-family: $osw;
+}
+
+.label {
+    font-family: $osw;
+}
+
+.list {
+    background: coral;
+}
