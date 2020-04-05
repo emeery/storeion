@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from './services/product.service';
+import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-store',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store.page.scss'],
 })
 export class StorePage implements OnInit {
-
-  constructor() { }
+  products: Product[];
+  constructor(
+    public productService: ProductService
+  ) { }
 
   ngOnInit() {
   }
-
+  setProducts() {
+    this.products = this.productService.getProducts();
+  }
 }
