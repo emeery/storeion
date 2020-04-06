@@ -8,7 +8,7 @@ export class ProductService {
   private products: Product[] = [
     {
       id: '123',
-      name: 'name',
+      name: 'Vestido Algodón',
       category: 'clothing',
       price: 123,
       stock: 12,
@@ -18,7 +18,7 @@ export class ProductService {
     },
     {
       id: '1233',
-      name: 'name',
+      name: 'Blusa Lisa',
       category: 'clothing',
       price: 133,
       stock: 6,

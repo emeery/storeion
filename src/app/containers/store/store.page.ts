@@ -14,8 +14,10 @@ export class StorePage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.setProducts();
   }
   setProducts() {
     this.products = this.productService.getProducts();
+    console.log('t', this.products)
   }
 }
