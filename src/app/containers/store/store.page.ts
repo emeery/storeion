@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './services/product.service';
 import { Product } from './models/product.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-store',
@@ -9,15 +10,19 @@ import { Product } from './models/product.model';
 })
 export class StorePage implements OnInit {
   products: Product[];
+  private productSub: Subscription;
   constructor(
     public productService: ProductService
   ) { }
 
   ngOnInit() {
-    this.setProducts();
+    this.getProducts();
   }
-  setProducts() {
-    this.products = this.productService.getProducts();
-    console.log('t', this.products)
+  getProducts() {
+    this.productService.getProducts();
+    this.productSub = this.productService.getProductListener()
+    .subscribe((prod: Product[]) => {
+      this.products = prod;
+    });
   }
 }
