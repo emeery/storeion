@@ -29,10 +29,8 @@ const productSchema = mongoose.Schema({
         minlength: 5,
         maxlength: 255
     },
-    image: {
-        type: String,
-        default: 'https://shoppr-c97a7.firebaseapp.com/assets/images/products/1_2.jpg',
-        required: true
+    imageCollection: {
+        type: Array
     },
     available: {
         type: Boolean,
