@@ -29,8 +29,8 @@ router.post(
             mensaje: 'producto agregado',
             product: {
                 id: product._id,
-                description: product.description,
                 name: product.name,
+                description: product.description,
                 stock: product.stock,
                 price: product.price,
                 imageCollection: reqFiles,

@@ -2,3 +2,6 @@
 .f {
     font-family: $osw;
 }
+.ion-input[type="file"] {
+    visibility: hidden;
+}

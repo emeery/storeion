@@ -10,3 +10,46 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
+<ion-content>
+    <form [formGroup]="form" (ngSubmit)="addProduct()">
+        <ion-grid>
+            <ion-row>
+                <ion-col size-sm="6" offset-sm="2">
+                    <ion-item>
+                        <ion-label position="floating">Nombre</ion-label>
+                        <ion-input type="text" formControlName="name"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size-sm="6" offset-sm="2">
+                    <ion-item>
+                        <ion-label position="floating">Descripcion</ion-label>
+                        <ion-textarea rows="3" formControlName="description"></ion-textarea>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-button type="button" (click)="selectionImage($event)" shape="round">imagen</ion-button>
+                
+            </ion-row>
+            <ion-row>
+                <ion-col size-sm="6" offset-sm="2">
+                    <ion-item>
+                        <ion-label position="floating">Precio</ion-label>
+                        <ion-input type="text" formControlName="price"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size-sm="6" offset-sm="2">
+                    <ion-item>
+                        <ion-label position="floating">Stock</ion-label>
+                        <ion-input type="text" formControlName="stock"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-button type="submit" color="secondary" expand="block">Agregar</ion-button>
+        </ion-grid>
+    </form>
+</ion-content>
