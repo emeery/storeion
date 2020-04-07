@@ -1,12 +1,12 @@
 <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar>
         <ion-buttons slot="start">
             <ion-menu-button class="title"></ion-menu-button>
         </ion-buttons>
         <ion-title class="head">TU TIENDA</ion-title>
         <ion-buttons slot="end">
-            <ion-button>
-                <ion-icon slot="icon-only" name="add"></ion-icon>
+            <ion-button (click)="addProduct()">
+                <ion-icon class="head" slot="icon-only" name="add"></ion-icon>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>

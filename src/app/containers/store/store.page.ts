@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from './services/product.service';
 import { Product } from './models/product.model';
 import { Subscription } from 'rxjs';
+import { ModalController } from '@ionic/angular';
+import { AddproductComponent } from './components/addproduct/addproduct.component';
 
 @Component({
   selector: 'app-store',
@@ -12,7 +14,8 @@ export class StorePage implements OnInit {
   products: Product[];
   private productSub: Subscription;
   constructor(
-    public productService: ProductService
+    public productService: ProductService,
+    private mdl: ModalController
   ) { }
 
   ngOnInit() {
@@ -24,5 +27,12 @@ export class StorePage implements OnInit {
     .subscribe((prod: Product[]) => {
       this.products = prod;
     });
+  }
+  addProduct() {
+    this.mdl.create({component: AddproductComponent})
+    .then(mdlEl => {
+      mdlEl.present();
+      return mdlEl.dismiss();
+    }).then(res => console.log('r', res));
   }
 }

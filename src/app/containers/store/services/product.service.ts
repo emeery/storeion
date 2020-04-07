@@ -25,7 +25,7 @@ export class ProductService {
               id: t._id,
               name: t.name,
               description: t.description,
-              image: t.image,
+              image: t.imageCollection[0],
               price: t.price
           };
         });
