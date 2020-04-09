@@ -24,6 +24,7 @@ router.post(
             available: req.body.avaliable,
             imageCollection: reqFiles
         })
+        console.log('prod', product)
         // await product.save()
         res.status(201).json({
             mensaje: 'producto agregado',
@@ -37,7 +38,8 @@ router.post(
                 date: product.date
             }
         })
-    } catch (e) { res.status(400).send(e) }
+    } catch (e) { 
+         res.status(400).send(e) }
 });
 
 router.get(
