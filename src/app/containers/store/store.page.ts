@@ -19,7 +19,7 @@ export class StorePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getProducts();
+    // this.getProducts();
   }
   getProducts() {
     this.productService.getProducts();
