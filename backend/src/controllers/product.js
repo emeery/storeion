@@ -40,7 +40,9 @@ router.post(
     } catch (e) { res.status(400).send(e) }
 });
 
-router.get('', async(req, res) => {
+router.get(
+    '',
+    async(req, res) => {
     try {
         const products = await Product.find({})
         res.status(200).json({
